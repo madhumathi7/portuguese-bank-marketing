@@ -1,0 +1,16 @@
+{
+  "model_name": "XGBoost",
+  "n_input_columns": 20,
+  "threshold": 0.09691474795341498,
+  "metrics": {
+    "oof_roc_auc": 0.7900564951780611,
+    "oof_lift_at_10": 1.9345496943341527,
+    "temporal_roc_auc": NaN
+  },
+  "excluded_features": [
+    "duration"
+  ],
+  "n_train_rows": 11162,
+  "positive_rate": 0.4738398136534671,
+  "contacted_frac_at_optimum": 0.97
+}

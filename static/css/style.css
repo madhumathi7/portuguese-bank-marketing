@@ -1,0 +1,47 @@
+/* Portuguese bank marketing.
+   Palette: deep indigo, muted amber, rose for warnings. Rose is reserved for the
+   leakage warning and nothing else, so it keeps its meaning. */
+:root{--paper:#EFEDE9;--sheet:#F8F7F4;--ink:#22212A;--ink-soft:#5C5A66;
+--rule:#C8C3BC;--indigo:#4A3B6B;--indigo-dark:#332755;--amber:#7A6320;--rose:#9C4A52;}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);margin:0;font-size:16.5px;line-height:1.62;
+  font-family:'Karla',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+h1,h2{font-family:'Instrument Serif',Georgia,serif;font-weight:400;line-height:1.12;letter-spacing:-.01em}
+h1{font-size:clamp(2.2rem,5vw,3.3rem);margin:0 0 .35rem}
+.mono,.eyebrow{font-family:'JetBrains Mono',ui-monospace,monospace}
+.eyebrow{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
+header.masthead{border-bottom:1.5px solid var(--ink);padding:34px 0 22px;margin-bottom:32px}
+header.masthead .sub{color:var(--ink-soft);max-width:60ch;margin:.5rem 0 0}
+form.upload{background:var(--sheet);border:1.5px dashed var(--rule);padding:38px 28px;
+  text-align:center;margin:26px 0}
+input[type=file]{display:block;margin:16px auto 0;max-width:340px;
+  font-family:'JetBrains Mono',monospace;font-size:.82rem}
+button{background:var(--indigo);color:#fff;border:0;border-radius:2px;padding:13px 32px;
+  font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.1em;
+  text-transform:uppercase;cursor:pointer;margin-top:18px}
+button:hover{background:var(--indigo-dark)}
+a{color:var(--indigo)}
+:focus-visible{outline:2px solid var(--indigo);outline-offset:3px}
+.stats{display:flex;flex-wrap:wrap;gap:26px;background:var(--sheet);border:1px solid var(--rule);
+  border-left:3px solid var(--indigo);padding:20px 24px;margin:22px 0}
+.stat .v{font-family:'Instrument Serif',serif;font-size:1.9rem;line-height:1.1}
+.stat .k{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-soft)}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.93rem}
+th{text-align:left;font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--ink-soft);border-bottom:1.5px solid var(--ink);
+  padding:8px 12px 8px 0;font-weight:400}
+td{border-bottom:1px solid var(--rule);padding:8px 12px 8px 0}
+td.num{font-family:'JetBrains Mono',monospace;font-variant-numeric:tabular-nums}
+tbody tr:hover td{background:var(--sheet)}
+.flag{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.1em;
+  text-transform:uppercase;padding:2px 8px;border:1px solid var(--amber);
+  color:var(--amber);border-radius:2px}
+.bar{display:inline-block;height:6px;background:var(--indigo);vertical-align:middle;
+  margin-right:8px;min-width:1px}
+.callout{border-left:3px solid var(--indigo);background:var(--sheet);padding:15px 19px;margin:22px 0}
+.callout.warn{border-left-color:var(--rose)}
+footer{border-top:1px solid var(--rule);margin-top:50px;padding:20px 0 42px;
+  color:var(--ink-soft);font-size:.84rem}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}

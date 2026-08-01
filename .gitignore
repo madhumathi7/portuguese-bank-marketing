@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+logs/
+dataset/*.csv
+!dataset/.gitkeep
+models/*.joblib
+!models/model_meta.json
+.env
+.DS_Store
+Thumbs.db

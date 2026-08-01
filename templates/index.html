@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block heading %}Build a ranked call list{% endblock %}
+{% block sub %}Upload a customer CSV with the campaign fields. Every row comes back
+scored and ordered, with a call decision at the threshold set from campaign economics.{% endblock %}
+{% block content %}
+<form class="upload" action="{{ url_for('score_csv') }}" method="post" enctype="multipart/form-data">
+  <p class="eyebrow">Customer file</p>
+  <p style="margin:.3rem 0 0">CSV with the standard campaign columns. Comma or semicolon separated.</p>
+  <input type="file" name="file" accept=".csv" required>
+  <button type="submit">Score and rank</button>
+</form>
+{% if meta %}
+<div class="stats">
+  <div class="stat"><div class="v">{{ meta.model_name }}</div><div class="k">production model</div></div>
+  <div class="stat"><div class="v">{{ '%.3f'|format(meta.threshold) }}</div><div class="k">call threshold</div></div>
+  {% if meta.metrics and meta.metrics.oof_roc_auc %}
+  <div class="stat"><div class="v">{{ '%.4f'|format(meta.metrics.oof_roc_auc) }}</div><div class="k">out-of-fold ROC-AUC</div></div>
+  {% endif %}
+  {% if meta.metrics and meta.metrics.oof_lift_at_10 %}
+  <div class="stat"><div class="v">{{ '%.1f'|format(meta.metrics.oof_lift_at_10) }}x</div><div class="k">lift on the top 10%</div></div>
+  {% endif %}
+</div>
+{% endif %}
+<div class="callout warn">
+  <span class="eyebrow">What this model deliberately does not use</span>
+  Call duration is excluded. It is the strongest correlate of the outcome in the
+  raw data and completely unusable in practice, because you only learn it after
+  the call has ended &mdash; by which point you already know the answer. A model
+  trained with it scores far higher and predicts nothing.
+</div>
+{% endblock %}

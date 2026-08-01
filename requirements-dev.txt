@@ -1,0 +1,9 @@
+-r requirements.txt
+xgboost==3.3.0
+matplotlib==3.10.8
+seaborn==0.13.2
+scipy==1.17.1
+jupyterlab==4.4.9
+ipykernel==6.31.1
+tabulate==0.10.0
+pytest==8.4.2

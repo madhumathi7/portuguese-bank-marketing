@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% block title %}Term deposit call list{% endblock %}</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Karla:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <p class="eyebrow">PRCP-1000 &middot; Portuguese bank &middot; direct marketing</p>
+    <h1>{% block heading %}Term deposit call list{% endblock %}</h1>
+    <p class="sub">{% block sub %}{% endblock %}</p>
+  </header>
+  {% if error %}<div class="callout warn">{{ error }}</div>{% endif %}
+  {% with msgs = get_flashed_messages() %}
+    {% for m in msgs %}<div class="callout warn">{{ m }}</div>{% endfor %}
+  {% endwith %}
+  {% block content %}{% endblock %}
+  <footer>
+    <p>Scores rank propensity to subscribe. Call duration is deliberately not a
+    model input: it is unknown until the call has already happened.</p>
+  </footer>
+</div>
+</body>
+</html>
