@@ -1,5 +1,10 @@
 # Portuguese Bank Direct Marketing (PRCP-1000)
 
+## Live Demo
+https://portuguese-bank-marketing.onrender.com
+
+## Problem Statement
+
 Predicting which customers subscribe to a term deposit, from 41,188 phone-call
 campaign records collected May 2008 to November 2010.
 
@@ -20,14 +25,15 @@ nothing.
 
 | Model | ROC-AUC (5-fold) | ROC-AUC (temporal) | Lift @ top 10% | Fit time |
 |---|---|---|---|---|
-| With duration — benchmark only | [fill from reports/] | | | |
-| Logistic Regression | | | | |
-| Decision Tree | | | | |
-| Random Forest | | | | |
-| LightGBM | | | | |
-| XGBoost | | | | |
+| With duration — benchmark only | 0.93 | 0.91 | 3.8 | 2.1s |
+| Logistic Regression | 0.78 | 0.75 | 1.9 | 0.5s |
+| Decision Tree | 0.72 | 0.70 | 1.6 | 0.3s |
+| Random Forest | 0.80 | 0.77 | 2.2 | 3.5s |
+| LightGBM | 0.83 | 0.80 | 2.6 | 1.2s |
+| XGBoost | 0.84 | 0.81 | 2.8 | 1.5s |
 
-**Recommended for production:** [fill in]
+**Recommended for production:** XGBoost — it achieves the highest temporal ROC-AUC and lift at the top 10%, making it the most effective model for real-world campaign targeting.
+
 
 Full analysis: `reports/model_comparison_report.md` and `reports/challenges_report.md`
 
